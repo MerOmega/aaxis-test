@@ -79,7 +79,7 @@ class ProductController extends AbstractController
         $successfullyUpdatedProducts = $updateResults['successfullyUpdatedProducts'];
 
         if (count($productsWithError) === 0) {
-            return new JsonResponse(['status' => 'All products updated successfully!'], 201);
+            return new JsonResponse(['status' => 'All products updated successfully!'], 200);
         } elseif (count($successfullyUpdatedProducts) > 0) {
             return new JsonResponse([
                                         'status' => 'Partial success',

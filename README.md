@@ -90,7 +90,7 @@ This is an example of a response when some products are successfully added and o
   }
 }
 ```
-**Example Response for Success (200):**
+**Example Response for Success (201):**
 ```json
 {
   "status": "All products added successfully!",
