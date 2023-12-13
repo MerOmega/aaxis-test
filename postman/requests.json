@@ -13,10 +13,10 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "[\r\n    {\r\n        \"sku\": \"123454\",\r\n        \"product_name\": \"Producto 1\",\r\n        \"description\": \"Descripción del Producto 1\"\r\n    },\r\n    {\r\n        \"sku\": \"12346\",\r\n        \"product_name\": \"Producto 2\",\r\n        \"description\": \"Descripción del Producto 2\"\r\n    },\r\n    {\r\n        \"sku\": \"12351\",\r\n        \"product_name\": \"Producto 4\",\r\n        \"description\": \"Descripción del Producto 4\"\r\n    }\r\n]"
+					"raw": "[\r\n    {\r\n        \"sku\": \"123458\",\r\n        \"product_name\": \"Producto 1\",\r\n        \"description\": \"Descripción del Producto 1\"\r\n    },\r\n    {\r\n        \"sku\": \"12346\",\r\n        \"product_name\": \"Producto 2\",\r\n        \"description\": \"Descripción del Producto 2\"\r\n    },\r\n    {\r\n        \"sku\": \"12351\",\r\n        \"product_name\": \"Producto 4\",\r\n        \"description\": \"Descripción del Producto 4\"\r\n    }\r\n]"
 				},
 				"url": {
-					"raw": "http://localhost:80/api/products/add",
+					"raw": "http://localhost:80/api/products",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -24,8 +24,7 @@
 					"port": "80",
 					"path": [
 						"api",
-						"products",
-						"add"
+						"products"
 					]
 				}
 			},
@@ -38,10 +37,10 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "[\r\n    {\r\n        \"sku\": \"AA\",\r\n        \"product_name\": \"Producto 1 updated\",\r\n        \"description\": \"Descripción del Producto 1 Updated\"\r\n    },\r\n    {\r\n        \"sku\": \"12345\",\r\n        \"product_name\": \"Producto 1 updated\",\r\n        \"description\": \"Descripción del Producto 1 Updated\"\r\n    }\r\n]"
+					"raw": "[\r\n    {\r\n        \"sku\": \"AA\",\r\n        \"product_name\": \"Producto 1 updated\",\r\n        \"description\": \"Descripción del Producto 1 Updated\"\r\n    },\r\n    {\r\n        \"sku\": \"123458\",\r\n        \"product_name\": \"Producto 2 updated\",\r\n        \"description\": \"Descripción del Producto 1 Updated\"\r\n    }\r\n]"
 				},
 				"url": {
-					"raw": "http://localhost:80/api/products/update",
+					"raw": "http://localhost:80/api/products",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -49,8 +48,7 @@
 					"port": "80",
 					"path": [
 						"api",
-						"products",
-						"update"
+						"products"
 					]
 				}
 			},
@@ -62,7 +60,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:80/api/products/list",
+					"raw": "http://localhost:80/api/products",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -70,8 +68,7 @@
 					"port": "80",
 					"path": [
 						"api",
-						"products",
-						"list"
+						"products"
 					]
 				}
 			},

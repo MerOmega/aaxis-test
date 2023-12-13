@@ -23,7 +23,7 @@ class ProductController extends AbstractController
      * @param ProductService $productService
      * @return JsonResponse
      */
-    #[Route('/add', name: 'product_add', methods: ['POST'])]
+    #[Route('', name: 'product_add', methods: ['POST'])]
     public function addProduct(Request $request, ProductService $productService): JsonResponse
     {
         $productsData = json_decode($request->getContent(), true);
@@ -61,7 +61,7 @@ class ProductController extends AbstractController
      * @param ProductService $productService
      * @return JsonResponse
      */
-    #[Route('/update', name: 'product_update', methods: ['PATCH'])]
+    #[Route('', name: 'product_update', methods: ['PATCH'])]
     public function updateProducts(Request $request, ProductService $productService): JsonResponse
     {
         $productsData  = json_decode($request->getContent(), true);
@@ -100,7 +100,7 @@ class ProductController extends AbstractController
      * @param SerializerInterface $serializer
      * @return JsonResponse
      */
-    #[Route('/list', name: 'product_list', methods: ['GET'])]
+    #[Route('', name: 'product_list', methods: ['GET'])]
     public function listProducts(ProductRepository $productRepository, SerializerInterface $serializer): JsonResponse
     {
         $products = $productRepository->findAll();

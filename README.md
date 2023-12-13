@@ -40,7 +40,7 @@ docker exec -it -w /var/www/symfony custom-php symfony console doctrine:migratio
 3. There is a json file in the root of the project called "requests.json" that can be imported to Postman to test the API
 
 ## Routes
-### POST http://localhost:80/api/products/add
+### POST http://localhost:80/api/products
 **Payload Schema:**
 
 The endpoint expects the following JSON structure in the request payload:
@@ -101,7 +101,7 @@ This is an example of a response when some products are successfully added and o
   }
 }
 ```
-### PATCH http://localhost:80/api/products/update
+### PATCH http://localhost:80/api/products
 **Payload Schema:**
 The endpoint expects the following JSON structure in the request payload:
 ```json
@@ -155,7 +155,7 @@ This is an example of a response when some products are successfully added and o
   "status": "All products updated successfully!"
 }
 ```
-### GET http://localhost:80/api/products/list
+### GET http://localhost:80/api/products
 **Response Format:**
 
 The endpoint returns a JSON array of product objects. Each object in the array includes product details. Below is an example of the structure of each product object in the array:
