@@ -17,6 +17,8 @@ use Symfony\Component\Serializer\SerializerInterface;
 class ProductController extends AbstractController
 {
     /**
+     * Receives a JSON array of products and adds them to the database by calling a service which handles the logic.
+     *
      * @param Request $request
      * @param ProductService $productService
      * @return JsonResponse
@@ -46,12 +48,19 @@ class ProductController extends AbstractController
                                             'added_products'  => $successfullyAddedProducts,
                                             'failed_products' => $productsWithError
                                         ]
-                                    ], 207);
+                                    ], 200);
         } else {
             return new JsonResponse(['status' => 'Failed to add any product', 'errors' => $productsWithError], 400);
         }
     }
 
+    /**
+     * Receives a JSON array of products and updates them in the database by calling a service which handles the logic.
+     *
+     * @param Request $request
+     * @param ProductService $productService
+     * @return JsonResponse
+     */
     #[Route('/update', name: 'product_update', methods: ['PATCH'])]
     public function updateProducts(Request $request, ProductService $productService): JsonResponse
     {
@@ -78,12 +87,19 @@ class ProductController extends AbstractController
                                             'updated_products' => $successfullyUpdatedProducts,
                                             'failed_products'  => $productsWithError
                                         ]
-                                    ], 207);
+                                    ], 200);
         } else {
             return new JsonResponse(['status' => 'Failed to update any product', 'errors' => $productsWithError], 400);
         }
     }
 
+    /**
+     * Returns a JSON array of all products in the database.
+     *
+     * @param ProductRepository $productRepository
+     * @param SerializerInterface $serializer
+     * @return JsonResponse
+     */
     #[Route('/list', name: 'product_list', methods: ['GET'])]
     public function listProducts(ProductRepository $productRepository, SerializerInterface $serializer): JsonResponse
     {

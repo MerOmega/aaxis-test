@@ -70,7 +70,7 @@ The endpoint expects the following JSON structure in the request payload:
   }
 }
 ```
-**Example Response for Partial Success (207):**
+**Example Response for Partial Success (200):**
 
 This is an example of a response when some products are successfully added and others fail:
 
@@ -129,7 +129,7 @@ The endpoint expects the following JSON structure in the request payload:
   }
 }
 ```
-**Example Response for Partial Success (207):**
+**Example Response for Partial Success (200):**
 
 This is an example of a response when some products are successfully added and others fail:
 
