@@ -26,6 +26,13 @@ class ProductController extends AbstractController
     {
         $productsData = json_decode($request->getContent(), true);
 
+        if (array_keys($productsData) !== range(0, count($productsData) - 1) || !is_array($productsData)) {
+            return new JsonResponse([
+                                        'status' => 'error',
+                                        'message' => 'Invalid JSON format. JSON must be an array of objects.'
+                                    ], 400);
+        }
+
         $productsReponse           = $productService->addProducts($productsData);
         $productsWithError         = $productsReponse['productsWithError'];
         $successfullyAddedProducts = $productsReponse['successfullyAddedProducts'];
@@ -49,6 +56,14 @@ class ProductController extends AbstractController
     public function updateProducts(Request $request, ProductService $productService): JsonResponse
     {
         $productsData  = json_decode($request->getContent(), true);
+
+        if (array_keys($productsData) !== range(0, count($productsData) - 1) || !is_array($productsData)) {
+            return new JsonResponse([
+                                        'status' => 'error',
+                                        'message' => 'Invalid JSON format. JSON must be an array of objects.'
+                                    ], 400);
+        }
+
         $updateResults = $productService->updateProducts($productsData);
 
         $productsWithError           = $updateResults['productsWithError'];
