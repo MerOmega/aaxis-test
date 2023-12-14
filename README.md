@@ -250,7 +250,7 @@ The endpoint returns a JSON array of product objects. Each object in the array i
 ```
 ***
 ### Extra commands
-### POST http://localhost:80/api/users
+### POST http://localhost:80/api/user
 With this endpoint you can retrieve the API KEY of a user by providing the email and password of the user.
 **Payload Schema:**
 This endpoint expects the following JSON structure in the request payload:
