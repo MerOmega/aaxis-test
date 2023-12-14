@@ -31,7 +31,7 @@ docker exec -it -w /var/www/symfony custom-php composer install
 run "symfony console doctrine:migrations:migrate" to execute the migrations
 or 
 ```bash
-docker exec -it -w /var/www/symfony custom-php symfony console doctrine:migrations:migrate
+docker exec -it -w /var/www/symfony custom-php symfony console doctrine:migrations:migrate --no-interaction
 ```
 (Outside the container)
 ### STEP 6:
