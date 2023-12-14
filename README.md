@@ -1,7 +1,7 @@
 # aaxis-test
 
 This is a technical test for AAXIS, use port 80 to access the API.
-
+Read the disclaimer at the end of the document if you are using Docker on Windows.
 
 ## Installation
 
@@ -249,6 +249,7 @@ The endpoint returns a JSON array of product objects. Each object in the array i
 }
 ```
 ***
+### Extra commands
 ### POST http://localhost:80/api/users
 With this endpoint you can retrieve the API KEY of a user by providing the email and password of the user.
 **Payload Schema:**
