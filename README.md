@@ -1,6 +1,7 @@
 # aaxis-test
 
-This is a technical test for AAXIS
+This is a technical test for AAXIS, use port 80 to access the API.
+
 
 ## Installation
 
@@ -33,13 +34,44 @@ or
 docker exec -it -w /var/www/symfony custom-php symfony console doctrine:migrations:migrate
 ```
 (Outside the container)
+### STEP 6:
+run "symfony console app:create-user" to create a user
+by default the user email is "aaxis@test.com" and the password is "aaxis_test"
+
+```bash
+docker exec -it -w /var/www/symfony custom-php symfony console app:create-user
+```
+(Outside the container)
+
+## Commands
+
+There are two commands available:
+1. app:create-user: Creates a user with the parameters email and password. If none is provided it will create a user with 
+email => aaxis@test.com and password => aaxis_test
+2. app:get-user : Gets the user with the provided email or ID.
+
 ## Usage
 
 1. When using Postman, Insomania or other use http://localhost:80
 2. There is a DB adminer in http://localhost:8080, use it to check the DB if needed
 3. There is a json file in the root of the project called "requests.json" that can be imported to Postman to test the API
-
+****
 ## Routes
+**Token chosen:**
+For the simplicity of the test I chose to use an API KEY token. Each user has an API KEY that is generated when the user is created.
+All /api/products endpoints require the API KEY to be sent in the header as "X-API-KEY" to be able to access the endpoint.
+**Example**
+```bash
+curl -X POST -H "Content-Type: application/json" -H "X-API-KEY: your-api-key" -d '[
+    {
+        "sku": "123458",
+        "product_name": "Producto 1",
+        "description": "Descripción del Producto 1"
+    }
+]' http://localhost:80/api/products
+```
+
+
 ### POST http://localhost:80/api/products
 **Payload Schema:**
 
@@ -67,6 +99,16 @@ The endpoint expects the following JSON structure in the request payload:
     },
     "required": ["sku", "product_name"],
     "additionalProperties": false
+  },
+  "headers": {
+    "type": "object",
+    "properties": {
+      "X-API-KEY": {
+        "type": "string",
+        "description": "The API key for authentication"
+      }
+    },
+    "required": ["X-API-KEY"]
   }
 }
 ```
@@ -126,6 +168,16 @@ The endpoint expects the following JSON structure in the request payload:
     },
     "required": ["sku", "product_name"],
     "additionalProperties": false
+  },
+  "headers": {
+    "type": "object",
+    "properties": {
+      "X-API-KEY": {
+        "type": "string",
+        "description": "The API key for authentication"
+      }
+    },
+    "required": ["X-API-KEY"]
   }
 }
 ```
@@ -183,11 +235,62 @@ The endpoint returns a JSON array of product objects. Each object in the array i
         "description": "A brief description of the product"
       }
     }
+  },
+  "headers": {
+    "type": "object",
+    "properties": {
+      "X-API-KEY": {
+        "type": "string",
+        "description": "The API key for authentication"
+      }
+    },
+    "required": ["X-API-KEY"]
   }
 }
 ```
-## Disclaimer
+***
+### POST http://localhost:80/api/users
+With this endpoint you can retrieve the API KEY of a user by providing the email and password of the user.
+**Payload Schema:**
+This endpoint expects the following JSON structure in the request payload:
 
+```json
+{
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "password": {
+      "type": "string"
+    }
+  },
+  "required": ["email", "password"]
+}
+```
+
+### POST http://localhost:80/api/user/create
+With this endpoint you can create a user.
+**Payload Schema:**
+This endpoint expects the following JSON structure in the request payload:
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "password": {
+      "type": "string"
+    }
+  },
+  "required": ["email", "password"]
+}
+```
+## Disclaimer
 When using Docker on Windows, the user
 might experience slow performance with bind-volumes. While there are 
 several ways to address this, they are considered outside the scope of
