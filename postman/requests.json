@@ -13,13 +13,13 @@
 				"header": [
 					{
 						"key": "X-API-KEY",
-						"value": "7b1d2b9de353049abc9aca31ca5f7e8b333294d487c4e27efd2e320c9aad_1702530789",
+						"value": "9baa519644f8fc4d0515e46c599b6bfe70cfad82d82e22aba023493bda3d_1702567278",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\r\n    {\r\n        \"sku\": \"123458\",\r\n        \"product_name\": \"Producto 1\",\r\n        \"description\": \"Descripción del Producto 1\"\r\n    },\r\n    {\r\n        \"sku\": \"12346\",\r\n        \"product_name\": \"Producto 2\",\r\n        \"description\": \"Descripción del Producto 2\"\r\n    },\r\n    {\r\n        \"sku\": \"12351\",\r\n        \"product_name\": \"Producto 4\",\r\n        \"description\": \"Descripción del Producto 4\"\r\n    }\r\n]"
+					"raw": "[\r\n    {\r\n        \"sku\": \"123458\",\r\n        \"product_name\": \"Product 1\",\r\n        \"description\": \"Description of Product 1\"\r\n    },\r\n    {\r\n        \"sku\": \"12346\",\r\n        \"product_name\": \"Product 2\",\r\n        \"description\": \"Description of Product 2\"\r\n    },\r\n    {\r\n        \"sku\": \"12351\",\r\n        \"product_name\": \"Product 43\",\r\n        \"description\": \"Description of Product 4\"\r\n    }\r\n]"
 				},
 				"url": {
 					"raw": "http://localhost:80/api/products",
@@ -43,13 +43,13 @@
 				"header": [
 					{
 						"key": "X-API-KEY",
-						"value": "7b1d2b9de353049abc9aca31ca5f7e8b333294d487c4e27efd2e320c9aad_1702530789",
+						"value": "9baa519644f8fc4d0515e46c599b6bfe70cfad82d82e22aba023493bda3d_1702567278",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\r\n    {\r\n        \"sku\": \"AA\",\r\n        \"product_name\": \"Producto 1 updated\",\r\n        \"description\": \"Descripción del Producto 1 Updated\"\r\n    },\r\n    {\r\n        \"sku\": \"123458\",\r\n        \"product_name\": \"Producto 2 updated\",\r\n        \"description\": \"Descripción del Producto 1 Updated\"\r\n    }\r\n]"
+					"raw": "[\r\n    {\r\n        \"sku\": \"AA\",\r\n        \"product_name\": \"Product 1 updated\",\r\n        \"description\": \"Description of Product 1 Updated\"\r\n    },\r\n    {\r\n        \"sku\": \"123458\",\r\n        \"product_name\": \"Product 2 updated\",\r\n        \"description\": \"Description of Product 2 Updated\"\r\n    }\r\n]"
 				},
 				"url": {
 					"raw": "http://localhost:80/api/products",
@@ -78,7 +78,7 @@
 					},
 					{
 						"key": "X-API-KEY",
-						"value": "7b1d2b9de353049abc9aca31ca5f7e8b333294d487c4e27efd2e320c9aad_1702530789",
+						"value": "9baa519644f8fc4d0515e46c599b6bfe70cfad82d82e22aba023493bda3d_1702567278",
 						"type": "text"
 					}
 				],

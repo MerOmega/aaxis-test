@@ -65,8 +65,8 @@ All /api/products endpoints require the API KEY to be sent in the header as "X-A
 curl -X POST -H "Content-Type: application/json" -H "X-API-KEY: your-api-key" -d '[
     {
         "sku": "123458",
-        "product_name": "Producto 1",
-        "description": "Descripción del Producto 1"
+        "product_name": "Product 1",
+        "description": "Description of Product 1"
     }
 ]' http://localhost:80/api/products
 ```
